@@ -6,15 +6,18 @@ from datetime import datetime, timedelta
 import json
 import os
 
+# Load JSON from environment variable
 json_content = os.environ.get("SERVICE_ACCOUNT_JSON")
-with open("serviceaccountdetails.json", "w") as f:
-    f.write(json_content)
+if not json_content:
+    raise ValueError("SERVICE_ACCOUNT_JSON not found in environment")
 
-# define scope
-scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+service_account_info = json.loads(json_content)
 
-# load credentials
-creds = ServiceAccountCredentials.from_json_keyfile_name("serviceaccountdetails.json", scope)
+# Define scope
+scope = ["https://spreadsheets.google.com/feeds","https://www.googleapis.com/auth/drive"]
+
+# Load credentials directly from dict
+creds = ServiceAccountCredentials.from_json_keyfile_dict(service_account_info, scope)
 client = gspread.authorize(creds)
 
 # open spreadsheet
