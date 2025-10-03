@@ -6,17 +6,28 @@ from datetime import datetime, timedelta
 import json
 import os
 
-# Load JSON from environment variable
+# Load .env variables if present (local) and allow GitHub Actions to override
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # if dotenv not installed, assume environment variable is already set
+
+# Read the JSON string from environment variable
 json_content = os.environ.get("SERVICE_ACCOUNT_JSON")
 if not json_content:
     raise ValueError("SERVICE_ACCOUNT_JSON not found in environment")
 
+# Convert JSON string to dict
 service_account_info = json.loads(json_content)
 
-# Define scope
-scope = ["https://spreadsheets.google.com/feeds","https://www.googleapis.com/auth/drive"]
+# Define your scope
+scope = [
+    "https://spreadsheets.google.com/feeds",
+    "https://www.googleapis.com/auth/drive"
+]
 
-# Load credentials directly from dict
+# Authenticate
 creds = ServiceAccountCredentials.from_json_keyfile_dict(service_account_info, scope)
 client = gspread.authorize(creds)
 
