@@ -23,9 +23,9 @@ function updateMetrics(metrics) {
     const investmentsRemaining = metrics.investments.goal - metrics.investments.latest_balance;
     document.getElementById('investmentsPercentage').textContent = `${investmentsPercent}%`;
     document.getElementById('investmentsAmount').textContent = 
-        `${metrics.investments.latest_balance.toLocaleString()} / ${metrics.investments.goal.toLocaleString()}`;
+        `$${metrics.investments.latest_balance.toLocaleString()} / $${metrics.investments.goal.toLocaleString()}`;
     document.getElementById('investmentsRemaining').textContent = 
-        `${investmentsRemaining.toLocaleString()} remaining`;
+        `$${investmentsRemaining.toLocaleString()} remaining`;
     document.getElementById('investmentsDays').textContent = 
         `${metrics.investments.days_left} days remaining`;
     
@@ -34,9 +34,9 @@ function updateMetrics(metrics) {
     const savingsRemaining = metrics.savings.goal - metrics.savings.latest_balance;
     document.getElementById('savingsPercentage').textContent = `${savingsPercent}%`;
     document.getElementById('savingsAmount').textContent = 
-        `${metrics.savings.latest_balance.toLocaleString()} / ${metrics.savings.goal.toLocaleString()}`;
+        `$${metrics.savings.latest_balance.toLocaleString()} / $${metrics.savings.goal.toLocaleString()}`;
     document.getElementById('savingsRemaining').textContent = 
-        `${savingsRemaining.toLocaleString()} remaining`;
+        `$${savingsRemaining.toLocaleString()} remaining`;
     document.getElementById('savingsDays').textContent = 
         `${metrics.savings.days_left} days remaining`;
     
