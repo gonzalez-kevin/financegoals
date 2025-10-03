@@ -4,6 +4,11 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime, timedelta
 import json
+import os
+
+json_content = os.environ.get("SERVICE_ACCOUNT_JSON")
+with open("serviceaccountdetails.json", "w") as f:
+    f.write(json_content)
 
 # define scope
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
