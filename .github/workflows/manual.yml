@@ -1,0 +1,42 @@
+# This is a basic workflow that runs weekly or on manual trigger
+
+name: Update Dashboard JSON
+
+on:
+  schedule:
+    - cron: '59 7 * * 5'
+  workflow_dispatch: # manual trigger option
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+
+    steps:
+    # checkout repo
+      - uses: actions/checkout@v3
+      # setup python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with: 
+          python-version: '3.11'
+
+      # install dependencies
+      - name: Install dependencies
+        run: |
+          pip install gspread oauth2client pandas
+
+      # run python script to generate json
+      - name: Run Python script
+        env:
+          SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+        run: python finances.py
+
+      - name: Commit updated JSON
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git diff --quiet && echo "No changes to commit" || git commit -m "Update dashboard JSON"
+          git push
+
+      
