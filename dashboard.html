@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="dashboard.css"> <!-- optional for styling -->
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .metric { margin-bottom: 20px; }
+        .chart-container { width: 600px; height: 400px; margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+    <h1>Financial Dashboard</h1>
+
+    <div id="metrics"></div>
+
+    <div class="chart-container">
+        <canvas id="investmentsChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="savingsChart"></canvas>
+    </div>
+
+    <!-- Link to external JavaScript -->
+    <script src="dashboard.js"></script>
+</body>
+</html>
