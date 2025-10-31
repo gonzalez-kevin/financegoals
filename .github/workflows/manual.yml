@@ -4,7 +4,7 @@ name: Update Dashboard JSON
 
 on:
   schedule:
-    - cron: '59 7 * * 5'
+    - cron: '59 7 * * 6'
   workflow_dispatch: # manual trigger option
 
 jobs:
