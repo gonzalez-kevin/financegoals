@@ -36,12 +36,12 @@ spreadsheet = client.open("Financial Goal Tracker")
 
 # creating investments df
 investment_sheet = spreadsheet.worksheet("Investments")
-investment_data = investment_sheet.get_all_records()
+investment_data = investment_sheet.get_all_records(expected_headers=['As Of Date', 'Balance'])
 investments = pd.DataFrame(investment_data)
 
 # creating savings df
 savings_sheet = spreadsheet.worksheet("Savings")
-savings_data = savings_sheet.get_all_records()
+savings_data = savings_sheet.get_all_records(expected_headers=['As Of Date', 'Balance'])
 savings = pd.DataFrame(savings_data)
 
 # Constants

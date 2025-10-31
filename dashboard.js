@@ -111,7 +111,7 @@ function createLineChart(canvasId, data, label, color) {
                     intersect: false,
                     callbacks: {
                         label: function(context) {
-                            return `${context.dataset.label}: $${context.parsed.y.toLocaleString()}`;
+                            return `${context.dataset.label}: $${context.parsed.y.toLocaleString().toFixed(2)}`;
                         }
                     }
                 }
