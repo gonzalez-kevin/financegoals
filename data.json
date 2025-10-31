@@ -1,7 +1,7 @@
 {
     "metrics": {
         "investments": {
-            "latest_balance": 48984.39,
+            "latest_balance": 48487.0,
             "goal": 100000,
             "days_left": 790,
             "target_date": "2027-12-31"
@@ -34,6 +34,11 @@
                 "As Of Date": "10/24/2025",
                 "Balance": 48984.39,
                 "": ""
+            },
+            {
+                "As Of Date": "10/31/2025",
+                "Balance": 48487.0,
+                "": ""
             }
         ],
         "savings_graph": [
@@ -51,6 +56,10 @@
             },
             {
                 "As Of Date": "10/24/2025",
+                "Balance": 11823.04
+            },
+            {
+                "As Of Date": "10/31/2025",
                 "Balance": 11823.04
             }
         ]
