@@ -1,15 +1,15 @@
 {
     "metrics": {
         "investments": {
-            "latest_balance": 48185.68,
+            "latest_balance": 48206.94,
             "goal": 100000,
-            "days_left": 761,
+            "days_left": 754,
             "target_date": "2027-12-31"
         },
         "savings": {
             "latest_balance": 15000.0,
             "goal": 15000,
-            "days_left": 31,
+            "days_left": 24,
             "target_date": "2025-12-31"
         }
     },
@@ -59,6 +59,11 @@
                 "As Of Date": "11/28/2025",
                 "Balance": 48185.68,
                 "": ""
+            },
+            {
+                "As Of Date": "12/05/2025",
+                "Balance": 48206.94,
+                "": ""
             }
         ],
         "savings_graph": [
@@ -96,6 +101,10 @@
             },
             {
                 "As Of Date": "11/28/2025",
+                "Balance": 15000.0
+            },
+            {
+                "As Of Date": "12/05/2025",
                 "Balance": 15000.0
             }
         ]
