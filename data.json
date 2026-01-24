@@ -3,13 +3,13 @@
         "investments": {
             "latest_balance": 48106.07,
             "goal": 100000,
-            "days_left": 712,
+            "days_left": 705,
             "target_date": "2027-12-31"
         },
         "savings": {
             "latest_balance": 15000.0,
             "goal": 15000,
-            "days_left": -18,
+            "days_left": -25,
             "target_date": "2025-12-31"
         }
     },
